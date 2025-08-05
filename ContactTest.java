@@ -4,41 +4,41 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ContactTest {
 
-		// It should create a valid contact with the correct fields
+    // It should create a valid contact with the correct fields
     @Test
     public void testValidContactCreation() {
         Contact c = new Contact("12345", "Cannoli", "Bardot", "1234567890", "221B Baker Street");
         assertEquals("12345", c.getContactId());
-				assertEquals("Cannoli", c.getFirstName());
+	assertEquals("Cannoli", c.getFirstName());
         assertEquals("Bardot", c.getLastName());
         assertEquals("1234567890", c.getPhone());
         assertEquals("221B Baker Street", c.getAddress());
     }
 
-		// It should throw an exception for invalid contact IDs (null, too long) and enforce immutability
+    // It should throw an exception for invalid contact IDs (null, too long) and enforce immutability
     @Test
     public void testInvalidContactId() {
-				assertThrows(IllegalArgumentException.class, () -> {
-						new Contact("12345678901", "Cannoli", "Bardot", "1234567890", "221B Baker Street");
-				});
+	assertThrows(IllegalArgumentException.class, () -> {
+	    new Contact("12345678901", "Cannoli", "Bardot", "1234567890", "221B Baker Street");
+        });
 
         assertThrows(IllegalArgumentException.class, () -> {
             new Contact(null, "Cannoli", "Bardot", "1234567890", "221B Baker Street");
         });
 
-				// Tests immutability of ID (no setter should exist; if it does, this test should fail)
-    		Contact contact = new Contact("12345", "Cannoli", "Bardot", "1234567890", "221B Baker Street");
+        // Tests immutability of ID (no setter should exist; if it does, this test should fail)
+        Contact contact = new Contact("12345", "Cannoli", "Bardot", "1234567890", "221B Baker Street");
 
-				// The line below should not compile if there is no setter (expected behaviour)
-				// contact.setContactId("newId");  // Uncommenting this should result in a compile-time error
+        // The line below should not compile if there is no setter (expected behaviour)
+        // contact.setContactId("newId");  // Uncommenting this should result in a compile-time error
 
-				// Confirms immutability: no setter method should exist
-				assertThrows(NoSuchMethodException.class, () -> {
-						Contact.class.getMethod("setContactId", String.class);
-				});
+        // Confirms immutability: no setter method should exist
+        assertThrows(NoSuchMethodException.class, () -> {
+            Contact.class.getMethod("setContactId", String.class);
+        });
     }
 
-		// It should throw an exception when first name is null or too long
+    // It should throw an exception when first name is null or too long
     @Test
     public void testInvalidFirstName() {
         assertThrows(IllegalArgumentException.class, () -> {
@@ -50,7 +50,7 @@ public class ContactTest {
         });
     }
 
-		// It should throw an exception when first name is blank or whitespace-only
+    // It should throw an exception when first name is blank or whitespace-only
     @Test
     public void testBlankFirstName() {
         assertThrows(IllegalArgumentException.class, () -> {
@@ -61,7 +61,7 @@ public class ContactTest {
         });
     }
 
-		// It should throw an exception when last name is null or too long
+    // It should throw an exception when last name is null or too long
     @Test
     public void testInvalidLastName() {
         assertThrows(IllegalArgumentException.class, () -> {
@@ -73,7 +73,7 @@ public class ContactTest {
         });
     }
 
-		// It should throw an exception when last name is blank or whitespace-only
+    // It should throw an exception when last name is blank or whitespace-only
     @Test
     public void testBlankLastName() {
         assertThrows(IllegalArgumentException.class, () -> {
@@ -117,7 +117,7 @@ public class ContactTest {
         });
     }
 
-		// It should throw an exception when address is blank or whitespace-only
+    // It should throw an exception when address is blank or whitespace-only
     @Test
     public void testBlankAddress() {
         assertThrows(IllegalArgumentException.class, () -> {
