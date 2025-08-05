@@ -8,3 +8,6 @@ I began by analyzing the project requirements and identifying the core features 
 
 ## How do I approach designing software?
 I took a modular, test-driven approach to the software design. Each entity class (e.g., `Contact`, `Task`, `Appointment`) has a corresponding service class that manages the lifecycle and logic of those objects. I began with class design, enforced the business rules in constructors and methods, and then built unit tests in concert with the project code. This process helped me design clean, maintainable code that'll be easy to extend and verify with automated tests.
+
+### A Quick Note:
+To view the summary and reflection report for this project directly from this repo, navigate to and open the `SUMMARY_REFLECTION.md` file.
