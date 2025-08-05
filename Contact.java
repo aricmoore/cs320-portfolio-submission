@@ -4,7 +4,7 @@ package contact;
    Author: Arielle Moore
    Description: A contact management system that allows adding, updating,
                 and deleting contacts. Includes enforced data validation
-								and JUnit/Maven test coverage.
+		and JUnit/Maven test coverage.
 */
 
 public class Contact {
@@ -33,14 +33,14 @@ public class Contact {
         this.address = address;
     }
 
-		// Getters
+    // Getters
     public String getContactId() { return contactId; }
     public String getFirstName() { return firstName; }
     public String getLastName() { return lastName; }
     public String getPhone() { return phone; }
     public String getAddress() { return address; }
 
-		// Setters (no setter needed for contactId because it's immutable)
+    // Setters (no setter needed for contactId because it's immutable)
     public void setFirstName(String firstName) {
         if (firstName == null || firstName.trim().isEmpty() || firstName.length() > 10)
             throw new IllegalArgumentException("Invalid first name");
